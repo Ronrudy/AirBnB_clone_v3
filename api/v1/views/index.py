@@ -1,4 +1,4 @@
-#!/usr/bin/pytihon3
+#!/usr/bin/python3
 """
 index
 """
