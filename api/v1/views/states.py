@@ -74,7 +74,7 @@ def state_put(state_id):
         if key not in ["id", "created_at", "updated_at"]:
             setattr(fetched_obj, key, val)
     fetched_obj.save()
-    return jsonify(fetched_obj.to_json())
+    return jsonify(fetched_obj.to_json()), 200
 
 
 @app_views.route("/states/<state_id>", methods=["DELETE"],
@@ -94,4 +94,4 @@ def state_delete_by_id(state_id):
     storage.delete(fetched_obj)
     storage.save()
 
-    return jsonify({})
+    return jsonify({}), 200
